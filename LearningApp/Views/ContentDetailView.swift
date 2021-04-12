@@ -23,7 +23,9 @@ struct ContentDetailView: View {
                 VideoPlayer(player: AVPlayer(url: url!))
                     .cornerRadius(10)
             }
+            
             //TODO: Description
+            CodeTextView()
             
             //Show the next lesson button only if there is a next lesson
             if model.hasNextLesson(){
@@ -49,6 +51,7 @@ struct ContentDetailView: View {
             }
         }
             .padding()
+        .navigationBarTitle(lesson?.title ?? "")
     }
 }
 
