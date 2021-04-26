@@ -24,6 +24,7 @@
 		8CB8FFF4261C6611003637A3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB8FFF3261C6611003637A3 /* HomeView.swift */; };
 		8CB8FFF6261C6617003637A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB8FFF5261C6617003637A3 /* Assets.xcassets */; };
 		8CB8FFF9261C6617003637A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB8FFF8261C6617003637A3 /* Preview Assets.xcassets */; };
+		8CFB7F0A2636F5FA007D38D1 /* TestResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB7F092636F5FA007D38D1 /* TestResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		8CB8FFF5261C6617003637A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CB8FFF8261C6617003637A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8CB8FFFA261C6617003637A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CFB7F092636F5FA007D38D1 /* TestResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				8C8C940B262F17BD00F84E8A /* TestView.swift */,
 				8C6193F92620900100F672A3 /* CodeTextView.swift */,
 				8C8C9408262F066F00F84E8A /* RectangleCard.swift */,
+				8CFB7F092636F5FA007D38D1 /* TestResultsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				8C6193ED261DEE5000F672A3 /* ContentViewRow.swift in Sources */,
 				8CB80008261C853A003637A3 /* ContentModel.swift in Sources */,
 				8CB80010261C998C003637A3 /* Models.swift in Sources */,
+				8CFB7F0A2636F5FA007D38D1 /* TestResultsView.swift in Sources */,
 				8C8C9409262F066F00F84E8A /* RectangleCard.swift in Sources */,
 				8C6193F6261DFB5900F672A3 /* Constants.swift in Sources */,
 			);
