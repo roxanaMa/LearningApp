@@ -35,7 +35,11 @@ class ContentModel: ObservableObject {
     
     init (){
         
+        //Parse local included JSON file
         getLocalData()
+        
+        //Download remote JSON file and parse data
+        getRemoteData()
     }
     
     //MARK: Data methods
@@ -69,6 +73,50 @@ class ContentModel: ObservableObject {
         catch{
             print ("Couldn't parse style data")
         }
+    }
+    
+    func getRemoteData() {
+        
+        //String path
+        let urlString = "https://roxanama.github.io/learningApp-Data/data2.json"
+        
+        //Create URL object
+        let url = URL(string: urlString)
+        
+        guard url != nil else{
+            //Couldn't create url
+            return
+        }
+        
+        //Create a URLrequest object
+        let request = URLRequest(url: url!)
+        
+        //Get the session and kick off the task
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            
+            //Check if there is an error
+            guard error == nil else{
+                //There was an error
+                return
+            }
+            do{
+                //Create JSON Decoder
+                let decoder = JSONDecoder()
+               
+                //Decode
+                let modules = try decoder.decode([Module].self, from: data!)
+                
+                //Append parsed modules into modules property
+                self.modules += modules
+            }
+            catch{
+                //Couldn't parse json
+            }
+        }
+        
+        //Kick off the data task
+        dataTask.resume()
     }
     
     //MARK: Module navigation methods
