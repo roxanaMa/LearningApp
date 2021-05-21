@@ -15,10 +15,12 @@ struct TestView: View {
     @State var submitted = false
     
     @State var numCorrect = 0
+    @State var showResults = false
     
     var body: some View {
         
-        if model.currentQuestion != nil{
+        if model.currentQuestion != nil &&
+            showResults == false {
             
             VStack(alignment: .leading){
                 //Question no
@@ -85,12 +87,20 @@ struct TestView: View {
                     //Check if answer hat been submitted
                     if submitted == true {
                         
-                        //Anwer has been submitted, move to the next question
-                        model.nextQuestion()
-                        
-                        //Reset the properties
-                        submitted = false
-                        selectedAnswerIndex = nil
+                        //Check if it's the last question
+                        if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count{
+                            
+                            //Show the results
+                            showResults = true
+                        }
+                        else{
+                            //Anwer has been submitted, move to the next question
+                            model.nextQuestion()
+                            
+                            //Reset the properties
+                            submitted = false
+                            selectedAnswerIndex = nil
+                        }
                     }
                     else{
                         //Answer has not been submitted
@@ -120,9 +130,13 @@ struct TestView: View {
             .navigationBarTitle("\(model.currentModule?.category ?? "") Test")
         }
         
-        else{
+        else if showResults == true {
             //If current question is nil, show the TestResultView
             TestResultsView(numCorrect: numCorrect)
+        }
+        
+        else{
+            ProgressView()
         }
     }
     
