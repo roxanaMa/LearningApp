@@ -24,7 +24,7 @@ struct ContentDetailView: View {
                     .cornerRadius(10)
             }
             
-            //TODO: Description
+            //Description
             CodeTextView()
             
             //Show the next lesson button only if there is a next lesson
@@ -37,6 +37,7 @@ struct ContentDetailView: View {
                 }, label: {
                     
                     ZStack{
+                        
                         RectangleCard(color: Color.green)
                             .frame(height:48)
                         Text("Next Lesson: \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)")

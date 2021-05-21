@@ -23,13 +23,17 @@ struct HomeViewRow: View {
                 .cornerRadius (10)
                 .shadow(radius: 5)
                 .aspectRatio(CGSize(width: 335, height: 175), contentMode: .fit)
+            
             HStack{
+                
                 //Image
                 Image (image)
                     .resizable()
                     .frame(width: 116, height: 116)
                     .clipShape(Circle())
-               Spacer()
+               
+                Spacer()
+                
                 //Text
                 VStack(alignment: .leading, spacing: 10){
                     //Headline

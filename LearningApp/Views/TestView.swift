@@ -21,7 +21,6 @@ struct TestView: View {
         if model.currentQuestion != nil{
             
             VStack(alignment: .leading){
-                
                 //Question no
                 Text ("Question \(model.currentQuestionIndex + 1) of \(model.currentModule?.test.questions.count ?? 0)")
                     .padding(.leading, 20)

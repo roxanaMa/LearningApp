@@ -17,7 +17,9 @@ struct HomeView: View {
             VStack(alignment:.leading){
                 Text ("What do you want to do today?")
                     .padding(.leading, 20)
+                
                 ScrollView{
+                    
                     LazyVStack {
                         
                         ForEach(model.modules){module in
@@ -56,6 +58,16 @@ struct HomeView: View {
                 }
             }
             .navigationTitle("Get Started")
+            .onChange(of: model.currentContentSelected) { changedValue in
+                if changedValue == nil {
+                    model.currentModule = nil
+                }
+            }
+            .onChange(of: model.currentTestSelected) { changedValue in
+                if changedValue == nil {
+                    model.currentModule = nil
+                }
+            }
         }
     }
 }
